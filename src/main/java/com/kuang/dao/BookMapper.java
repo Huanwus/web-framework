@@ -1,6 +1,8 @@
 package com.kuang.dao;
 
 import com.kuang.pojo.Books;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface BookMapper {
@@ -19,5 +21,7 @@ public interface BookMapper {
 
     //查询全部Book,返回list集合
     List<Books> queryAllBook();
+
+    Books queryBookByName(@Param("bookName") String bookName);
 
 }
